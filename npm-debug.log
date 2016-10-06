@@ -1,0 +1,52 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/tmcothran/.nvm/versions/node/v4.4.7/bin/node',
+1 verbose cli   '/home/tmcothran/.nvm/versions/node/v4.4.7/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'protractor' ]
+2 info using npm@3.10.6
+3 info using node@v4.4.7
+4 verbose run-script [ 'preprotractor', 'protractor', 'postprotractor' ]
+5 info lifecycle angular-seed@0.0.0~preprotractor: angular-seed@0.0.0
+6 verbose lifecycle angular-seed@0.0.0~preprotractor: unsafe-perm in lifecycle true
+7 verbose lifecycle angular-seed@0.0.0~preprotractor: PATH: /home/tmcothran/.nvm/versions/node/v4.4.7/lib/node_modules/npm/bin/node-gyp-bin:/home/tmcothran/programs/awesomeInc/angular/todo/node_modules/.bin:/usr/local/heroku/bin:/home/tmcothran/.rbenv/shims:/home/tmcothran/.rbenv/bin:/home/tmcothran/.nvm/versions/node/v4.4.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
+8 verbose lifecycle angular-seed@0.0.0~preprotractor: CWD: /home/tmcothran/programs/awesomeInc/angular/todo
+9 silly lifecycle angular-seed@0.0.0~preprotractor: Args: [ '-c', 'npm run update-webdriver' ]
+10 silly lifecycle angular-seed@0.0.0~preprotractor: Returned: code: 0  signal: null
+11 info lifecycle angular-seed@0.0.0~protractor: angular-seed@0.0.0
+12 verbose lifecycle angular-seed@0.0.0~protractor: unsafe-perm in lifecycle true
+13 verbose lifecycle angular-seed@0.0.0~protractor: PATH: /home/tmcothran/.nvm/versions/node/v4.4.7/lib/node_modules/npm/bin/node-gyp-bin:/home/tmcothran/programs/awesomeInc/angular/todo/node_modules/.bin:/usr/local/heroku/bin:/home/tmcothran/.rbenv/shims:/home/tmcothran/.rbenv/bin:/home/tmcothran/.nvm/versions/node/v4.4.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
+14 verbose lifecycle angular-seed@0.0.0~protractor: CWD: /home/tmcothran/programs/awesomeInc/angular/todo
+15 silly lifecycle angular-seed@0.0.0~protractor: Args: [ '-c', 'protractor e2e-tests/protractor.conf.js' ]
+16 silly lifecycle angular-seed@0.0.0~protractor: Returned: code: 1  signal: null
+17 info lifecycle angular-seed@0.0.0~protractor: Failed to exec protractor script
+18 verbose stack Error: angular-seed@0.0.0 protractor: `protractor e2e-tests/protractor.conf.js`
+18 verbose stack Exit status 1
+18 verbose stack     at EventEmitter.<anonymous> (/home/tmcothran/.nvm/versions/node/v4.4.7/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+18 verbose stack     at emitTwo (events.js:87:13)
+18 verbose stack     at EventEmitter.emit (events.js:172:7)
+18 verbose stack     at ChildProcess.<anonymous> (/home/tmcothran/.nvm/versions/node/v4.4.7/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+18 verbose stack     at emitTwo (events.js:87:13)
+18 verbose stack     at ChildProcess.emit (events.js:172:7)
+18 verbose stack     at maybeClose (internal/child_process.js:827:16)
+18 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+19 verbose pkgid angular-seed@0.0.0
+20 verbose cwd /home/tmcothran/programs/awesomeInc/angular/todo
+21 error Linux 4.4.0-38-generic
+22 error argv "/home/tmcothran/.nvm/versions/node/v4.4.7/bin/node" "/home/tmcothran/.nvm/versions/node/v4.4.7/bin/npm" "run" "protractor"
+23 error node v4.4.7
+24 error npm  v3.10.6
+25 error code ELIFECYCLE
+26 error angular-seed@0.0.0 protractor: `protractor e2e-tests/protractor.conf.js`
+26 error Exit status 1
+27 error Failed at the angular-seed@0.0.0 protractor script 'protractor e2e-tests/protractor.conf.js'.
+27 error Make sure you have the latest version of node.js and npm installed.
+27 error If you do, this is most likely a problem with the angular-seed package,
+27 error not with npm itself.
+27 error Tell the author that this fails on your system:
+27 error     protractor e2e-tests/protractor.conf.js
+27 error You can get information on how to open an issue for this project with:
+27 error     npm bugs angular-seed
+27 error Or if that isn't available, you can get their info via:
+27 error     npm owner ls angular-seed
+27 error There is likely additional logging output above.
+28 verbose exit [ 1, true ]
