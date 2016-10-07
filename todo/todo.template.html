@@ -19,8 +19,11 @@
     <div class="task-display">
         <ul class="list-group">
             <li class="list-group-item"
-                ng-repeat="task in $ctrl.taskDisplayList" >
+                ng-repeat="task in $ctrl.taskList()" >
                 {{ task.content }}
+                <a href="#" ng-click="$ctrl.removeTask(task)">
+                    delete
+                </a>
             </li>
 
         </ul>

@@ -7,8 +7,11 @@ function toDoController(TaskList) {
     self.taskList = function() {
         return TaskList.list();
     };
-    self.addTask = function() {
-        TaskList.add();
+    self.addTask = function(taskContent) {
+        TaskList.add(taskContent);
+    };
+    self.removeTask = function(task) {
+        TaskList.remove(task);
     };
 }
 
@@ -29,6 +32,11 @@ function TaskList () {
                 new Task(taskContent)
             );
         },
+        remove: function(task) {
+            taskList = R.without(
+                [task], taskList
+            );
+        }
     };
 }
 
