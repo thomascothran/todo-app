@@ -20,6 +20,13 @@
         <ul class="list-group">
             <li class="list-group-item"
                 ng-repeat="task in $ctrl.taskList()" >
+                <i 
+                    ng-click="$ctrl.toggleComplete(task)"
+                    ng-class="{
+                        'fa fa-square-o':(!task.complete),
+                        'fa fa-check-square-o': task.complete,
+                        }" aria-hidden="true">
+                </i>
                 {{ task.content }}
                 <a href="#" ng-click="$ctrl.removeTask(task)">
                     delete

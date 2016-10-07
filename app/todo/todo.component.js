@@ -13,6 +13,9 @@ function toDoController(TaskList) {
     self.removeTask = function(task) {
         TaskList.remove(task);
     };
+    self.toggleComplete = function(task) {
+        TaskList.toggleComplete(task);
+    };
 }
 
 function Task(content) {
@@ -36,7 +39,14 @@ function TaskList () {
             taskList = R.without(
                 [task], taskList
             );
-        }
+        },
+        toggleComplete: function(task) {
+            if (task.complete) {
+                task.complete = false;
+            } else {
+                task.complete = true;
+            }
+        },
     };
 }
 
