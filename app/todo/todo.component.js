@@ -33,10 +33,11 @@ function TaskList () {
 }
 
 angular.module('todo').
-    component('todoComponent', [
-        'TaskList', {
+    component('todoComponent', {
         templateUrl: 'todo/todo.template.html',
-        controller: toDoController(TaskList),
-        }
-    ]).factory('TaskList', TaskList);
+        controller: ['TaskList', toDoController,
+        ]   
+    }).factory('TaskList', [
+        TaskList
+    ]);
 
