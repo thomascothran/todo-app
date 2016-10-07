@@ -2,19 +2,16 @@
 
 // Declare app level module which depends on views, and components
 
-function Task(content) {
-    // A constructor function for tasks
-    this.content = content;
-    this.complete = false;
-}
-
 function toDoController() {
     const self = this;
-    self.taskList = [];
+    self.taskDisplayList = [];
     self.taskInput = "And another";
-    self.taskList.push(
+    self.taskDisplayList.push(
         new Task(self.taskInput)
     );
+    self.addTask = function(task) {
+        self.taskDisplayList.push(new Task(task));
+    };
 }
 
 
