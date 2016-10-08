@@ -5,28 +5,45 @@
         <div class="form-group">
             <input class="form-control input-lg" ng-model="$ctrl.taskInput">
         </div>
-        <div ng-click="$ctrl.addTask($ctrl.taskInput)"
+        <div 
             class="form-group">
-            <a href="#" class="btn btn-primary">
-                Add task
-            </a>
+            <input href="#" 
+                ng-click="$ctrl.addTask($ctrl.taskInput)"
+                class="btn btn-primary"
+                type="submit" value="Add task">
             <a href="#" 
                 class="btn btn-primary">
                 Cancel
             </a>
+            <a href="#" class="btn"
+                ng-click="$ctrl.toggleFilter()">
+                toggle filters
+            </a>
         </div>
     </form>
+
+
+    <div ng-show="$ctrl.showFilter" class="filters">
+        testing
+        <label for="complete-task-filter">
+            Complete
+        </label>
+        <input type="checkbox" id="complete-task-filter"
+            ng-model="$ctrl.taskFilter['complete']">
+    </div>
+
     <div class="task-display">
         <ul class="list-group">
             <li class="list-group-item"
-                ng-repeat="task in $ctrl.taskList()" >
-                <i 
+                ng-repeat="task in $ctrl.taskList() |
+                           filter:$ctrl.taskFilter" >
+                <a href="#"><i 
                     ng-click="$ctrl.toggleComplete(task)"
                     ng-class="{
                         'fa fa-square-o':(!task.complete),
                         'fa fa-check-square-o': task.complete,
                         }" aria-hidden="true">
-                </i>
+                </i></a>
                 {{ task.content }}
                 <a href="#" ng-click="$ctrl.removeTask(task)">
                     delete
