@@ -10,6 +10,7 @@ function toDoController(TaskList) {
     };
     self.addTask = function(taskContent) {
         TaskList.add(taskContent);
+        self.taskInput = '';
     };
     self.removeTask = function(task) {
         TaskList.remove(task);
@@ -17,20 +18,13 @@ function toDoController(TaskList) {
     self.toggleComplete = function(task) {
         TaskList.toggleComplete(task);
     };
+    // Sorting tasks
+    self.sortType = 'created';
+    self.sortReverse = false;
     // Filtering tasks
-    self.showFilter = true;
-    console.log("self.showFilter is " + self.showFilter);
-    self.toggleFilter = function() {
-        console.log('Entering toggleFilter.');
-        if (self.showFilter) {
-            self.showFilter = false;
-            self.taskFilter = {};
-        } else {
-            self.showFilter = true;
-        }
-    };
-    self.taskFilter = {
-        complete: false,
+    self.taskFilter = {};
+    self.clearFilter = function() {
+        delete self.taskFilter.complete;
     };
 }
 
