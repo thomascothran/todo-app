@@ -32,24 +32,84 @@
             ng-model="$ctrl.taskFilter['complete']">
     </div>
 
-    <div class="task-display">
-        <ul class="list-group">
-            <li class="list-group-item"
-                ng-repeat="task in $ctrl.taskList() |
-                           filter:$ctrl.taskFilter" >
-                <a href="#"><i 
-                    ng-click="$ctrl.toggleComplete(task)"
-                    ng-class="{
-                        'fa fa-square-o':(!task.complete),
-                        'fa fa-check-square-o': task.complete,
-                        }" aria-hidden="true">
-                </i></a>
-                {{ task.content }}
-                <a href="#" ng-click="$ctrl.removeTask(task)">
-                    delete
-                </a>
-            </li>
+    {{ $ctrl|json }}
 
-        </ul>
+    <div class="task-display">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <a href="#"
+                            ng-click="$ctrl.taskFilter['complete'] =
+                                      false;"
+                            ng-show="(!$ctrl.taskFilter
+                                      .hasOwnProperty('complete'))"
+                            >
+                            Status
+                        </a>
+                        <a href="#"
+                            ng-click="$ctrl.taskFilter['complete'] =  
+                                      true;"
+                            ng-show="$ctrl.taskFilter['complete'] ===
+                                      false;"
+                        >
+                            Showing Incomplete
+                        </a>
+                        <a href="#"
+                            ng-click="$ctrl.clearFilter()"
+                            ng-show="$ctrl.taskFilter['complete']"
+                        >
+                            Showing Complete
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#" 
+                            ng-click="$ctrl.sortType='content';
+                                      $ctrl.sortReverse=(!$ctrl.sortReverse);"
+                        >
+                            Task
+                            <span ng-show="$ctrl.sortType=='content' &&
+                                           (!$ctrl.sortReverse);"
+                                class="fa fa-caret-down">
+                            </span>
+                            <span ng-show="$ctrl.sortType=='content' &&
+                                           ($ctrl.sortReverse);"
+                                class="fa fa-caret-up">
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#"
+                            ng-click="$ctrl.sortType='created';
+                                      $ctrl.sortReverse=(!$ctrl.sortReverse);"
+                        >
+                            Created
+                            <span ng-show="$ctrl.sortType=='created' &&
+                                           (!$ctrl.sortReverse)"
+                                class="fa fa-caret-down">
+                            <span ng-show="$ctrl.sortType=='created' &&
+                                           $ctrl.sortReverse"
+                                class="fa fa-caret-up">
+                        </th>
+                    <th>Delete</th>
+                </tr>
+            <thead>
+            <tbody>
+                <tr ng-repeat="task in $ctrl.taskList()
+                    | filter:$ctrl.taskFilter
+                    | orderBy:$ctrl.sortType:$ctrl.sortReverse">
+                    <td>
+                        <input type="checkbox" ng-model="task.complete">
+                    </td>
+                    <td>{{ task.content }}</td>
+                    <td>{{ task.created | date: 'medium' }}</td>
+                    <td>
+                        <a href="#" ng-click="$ctrl.removeTask(task)">
+                            delete
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
