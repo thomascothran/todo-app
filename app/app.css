@@ -23,3 +23,46 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+body {
+    background-color: #F4F4F4;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar-default {
+    background-color: #66B9BF;
+}
+
+.navbar-default .navbar-brand {
+    color: #262228;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.btn-primary {
+    background-color: #FC4A1A;
+    border: 0px;
+    color: #DFDCE3;
+}
+
+#add-task-main-btn:hover, #add-task-main-btn:active, #add-task-main-btn:focus {
+    background-color: #66B9BF;
+}
+
+a {
+    color: #66B9BF;
+}
+
+.task-display {
+    background-color: white;
+}
+
+.task-display table {
+    font-size: 18px;
+}
+
+#status-column-header {
+    width: 20px;
+}
+#task-content-header {
+    width: 380px;
+}

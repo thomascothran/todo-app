@@ -1,24 +1,19 @@
-<h1 class="text-center">Todo List</h1>
 
-<div class="task-input">
+<div class="task-input" style="margin-top:50px;">
     <form class="form-horizontal">
         <div class="form-group">
-            <input class="form-control input-lg" ng-model="$ctrl.taskInput">
-        </div>
-        <div 
-            class="form-group">
-            <input href="#" 
-                ng-click="$ctrl.addTask($ctrl.taskInput)"
-                class="btn btn-primary"
-                type="submit" value="Add task">
-            <a href="#" 
-                class="btn btn-primary">
-                Cancel
-            </a>
-            <a href="#" class="btn"
-                ng-click="$ctrl.toggleFilter()">
-                toggle filters
-            </a>
+            <div class="input-group">
+                <input id="task-input-box"
+                    class="form-control input-lg" ng-model="$ctrl.taskInput">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary btn-lg"
+                        id="add-task-main-btn"
+                        ng-click="$ctrl.addTask($ctrl.taskInput)"
+                        type="submit" value="Add task">
+                        add task
+                    </button>
+                </span>
+            </div>
         </div>
     </form>
 
@@ -38,7 +33,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>
+                    <th id="status-column-header">
                         <a href="#"
                             ng-click="$ctrl.taskFilter['complete'] =
                                       false;"
@@ -62,7 +57,7 @@
                             Showing Complete
                         </a>
                     </th>
-                    <th>
+                    <th id="task-content-header">
                         <a href="#" 
                             ng-click="$ctrl.sortType='content';
                                       $ctrl.sortReverse=(!$ctrl.sortReverse);"
@@ -78,7 +73,7 @@
                             </span>
                         </a>
                     </th>
-                    <th>
+                    <th id="task-created-header">
                         <a href="#"
                             ng-click="$ctrl.sortType='created';
                                       $ctrl.sortReverse=(!$ctrl.sortReverse);"
@@ -91,7 +86,7 @@
                                            $ctrl.sortReverse"
                                 class="fa fa-caret-up">
                         </th>
-                    <th>Delete</th>
+                    <th id="task-actions-header">Actions</th>
                 </tr>
             <thead>
             <tbody>
@@ -105,7 +100,9 @@
                     <td>{{ task.created | date: 'medium' }}</td>
                     <td>
                         <a href="#" ng-click="$ctrl.removeTask(task)">
-                            delete
+                            <i class="fa fa-trash" 
+                                aria-hidden="true"></i>
+
                         </a>
                     </td>
                 </tr>
