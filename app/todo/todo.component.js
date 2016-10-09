@@ -18,6 +18,11 @@ function toDoController(TaskList) {
     self.toggleComplete = function(task) {
         TaskList.toggleComplete(task);
     };
+    // Formatting helper function
+    self.formatDate = function(date) {
+        console.log('Date is of type ' + typeof(date));
+        return date;
+    }
     // Sorting tasks
     self.sortType = 'created';
     self.sortReverse = false;
@@ -32,24 +37,25 @@ function Task(content) {
     // A constructor function for tasks
     this.content = content;
     this.complete = false;
-    this.created = Date();
+    this.created = new Date();
 }
 
 function TaskList () {
     // A service to persist task data
-    var taskList = [];
+    var self = this;
+    self.taskList = [];
     return {
         list: function() {
-            return taskList;
+            return self.taskList;
         },
         add: function(taskContent) {
-            taskList.push(
+            self.taskList.push(
                 new Task(taskContent)
             );
         },
         remove: function(task) {
-            taskList = R.without(
-                [task], taskList
+            self.taskList = R.without(
+                [task], self.taskList
             );
         },
         toggleComplete: function(task) {
