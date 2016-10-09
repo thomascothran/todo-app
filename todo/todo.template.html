@@ -17,16 +17,6 @@
         </div>
     </form>
 
-
-    <div ng-show="$ctrl.showFilter" class="filters">
-        testing
-        <label for="complete-task-filter">
-            Complete
-        </label>
-        <input type="checkbox" id="complete-task-filter"
-            ng-model="$ctrl.taskFilter['complete']">
-    </div>
-
     {{ $ctrl|json }}
 
     <div class="task-display">
@@ -97,7 +87,7 @@
                         <input type="checkbox" ng-model="task.complete">
                     </td>
                     <td>{{ task.content }}</td>
-                    <td>{{ task.created | date: 'medium' }}</td>
+                    <td>{{ $ctrl.formatDate(task.created) | date:'short' }}</td>
                     <td>
                         <a href="#" ng-click="$ctrl.removeTask(task)">
                             <i class="fa fa-trash" 
