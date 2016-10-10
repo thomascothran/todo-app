@@ -29,6 +29,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.navbar-default li.dropdown i {
+    color: #FC4A1A;
+}
+
 .navbar-default {
     background-color: #66B9BF;
 }
