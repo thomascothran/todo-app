@@ -80,14 +80,14 @@
                 </tr>
             <thead>
             <tbody>
-                <tr ng-repeat="task in $ctrl.taskList()
+                <tr ng-repeat="task in $ctrl.taskList.tasks
                     | filter:$ctrl.taskFilter
                     | orderBy:$ctrl.sortType:$ctrl.sortReverse">
                     <td>
                         <input type="checkbox" ng-model="task.complete">
                     </td>
                     <td>{{ task.content }}</td>
-                    <td>{{ $ctrl.formatDate(task.created) | date:'short' }}</td>
+                    <td>{{ task.created | date:'short' }}</td>
                     <td>
                         <a href="#" ng-click="$ctrl.removeTask(task)">
                             <i class="fa fa-trash" 
