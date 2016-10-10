@@ -25,8 +25,6 @@ function toDoController(TaskListService) {
         TaskListService.toggleComplete(task);
     };
 
-    // Set a default taskList
-
 
     // Sorting tasks
     self.sortType = 'created';
@@ -70,6 +68,7 @@ function TaskList(name) {
 function TaskListService () {
     // A service to persist task data
     var self = this;
+    // Not use self?
     self.taskLists = [];
     // Add a default taskList
     self.taskLists.push(

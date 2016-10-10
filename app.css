@@ -41,7 +41,7 @@ body {
 .btn-primary {
     background-color: #FC4A1A;
     border: 0px;
-    color: #DFDCE3;
+    color: #262228;
 }
 
 #add-task-main-btn:hover, #add-task-main-btn:active, #add-task-main-btn:focus {
