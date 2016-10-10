@@ -27,6 +27,8 @@
   <script src="todo/todo.module.js"></script>
   <script src="todo/todo.component.js"></script>
   <script src="todo/todo.service.js"></script>
+  <script src="list-manager/list-manager.module.js"></script>
+  <script src="list-manager/list-manager.component.js"></script>
 </head>
 
 
@@ -86,7 +88,7 @@
                         <todo-component></todo-component>
                     </div>
                     <div ng-switch-when="lists">
-                        Lists test
+                        <list-manager-component></list-manager-component>
                     </div>
                 </div>
             </div>
